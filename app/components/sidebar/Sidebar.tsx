@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import SideLinks from "../side-links/SideLinks";
 
-import { Leagues } from "@/constants/Leagues";
+import { Leagues } from "@/app/constants/Leagues";
 
 const Sidebar: FC = async () => {
   return (

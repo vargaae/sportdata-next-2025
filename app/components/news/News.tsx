@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getNewsInfo } from "../../../api";
-import { newsType } from "@/types";
+import { newsType } from "@/app/types";
 
 const News = async () => {
   const getNews = await getNewsInfo();

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { matchesType } from "@/types";
+import { matchesType } from "@/app/types";
 
 const Competition = ({ matches }: { matches: matchesType }) => {
   // const imageLoader = ({}) => {

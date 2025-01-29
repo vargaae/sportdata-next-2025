@@ -1,5 +1,5 @@
 import { filterLeague, filterLeagueFinished } from "../../../api";
-import LeagueTable from "@/components/league-table/LeagueTable";
+import LeagueTable from "@/app/components/league-table/LeagueTable";
 import Link from "next/link";
 
 const SerieA = async () => {

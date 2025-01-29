@@ -1,6 +1,6 @@
 "use client";
 
-import { matchesType } from "@/types";
+import { matchesType } from "@/app/types";
 import React, { useEffect, useState } from "react";
 import LeagueTable from "../league-table/LeagueTable";
 

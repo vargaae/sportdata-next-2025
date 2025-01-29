@@ -1,37 +1,52 @@
-import { getMatchesFootball, getMatchesFootballFinished } from "../api";
-import Status from "@/components/status/Status";
+"use client";
 
+import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
-import type { Schema } from "../amplify/data/resource";
+import type { Schema } from "@/amplify/data/resource";
+// import "./../app/app.css";
 import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
+// import "@aws-amplify/ui-react/styles.css";
 
 Amplify.configure(outputs);
 
 const client = generateClient<Schema>();
 
-export default async function Home() {
-  const getDatas = await getMatchesFootball();
-  const getDatasFinished = await getMatchesFootballFinished();
+export default function App() {
+  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
-  const matchesDatas = getDatas?.matches;
-  const matchesDatasFinished = getDatasFinished?.matches;
+  function listTodos() {
+    client.models.Todo.observeQuery().subscribe({
+      next: (data) => setTodos([...data.items]),
+    });
+  }
 
-  const nd = new Date();
-  const dateConvert = nd.toDateString();
+  useEffect(() => {
+    listTodos();
+  }, []);
+
+  function createTodo() {
+    client.models.Todo.create({
+      content: window.prompt("Todo content"),
+    });
+  }
 
   return (
-    <section className="px-2 md:px-4 md:w-[600px]">
-      <div className="flex justify-between items-center mb-4 md:mb-2">
-      <h1 className="px-4 py-0 md:py-1 bg-teal-100 rounded-md text-md md:text-xl font-bold">Sport{` > `}Football MATCHES</h1>
-        <div className="px-4 py-0 md:py-1 bg-slate-600 rounded-md text-textSecondary text-sm">
-          <p>{`${dateConvert}`}</p>
-        </div>
+    <main>
+      <h1>My todos</h1>
+      <button onClick={createTodo}>+ new</button>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>{todo.content}</li>
+        ))}
+      </ul>
+      <div>
+        🥳 App successfully hosted. Try creating a new todo.
+        <br />
+        <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/">
+          Review next steps of this tutorial.
+        </a>
       </div>
-      <Status
-        matchesList={matchesDatas}
-        matchesListFinished={matchesDatasFinished}
-      />
-    </section>
+    </main>
   );
 }

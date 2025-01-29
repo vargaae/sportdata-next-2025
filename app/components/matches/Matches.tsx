@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { matchesType } from "@/types";
+import { matchesType } from "@/app/types";
 
 const Matches = ({ matches }: { matches: matchesType }) => {
   const getDate = new Date(matches?.utcDate).toLocaleTimeString("en-UK", {

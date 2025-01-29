@@ -1,4 +1,4 @@
-import { matchesType } from "@/types";
+import { matchesType } from "@/app/types";
 import Competition from "../competition/Competition";
 import Matches from "../matches/Matches";
 import Live from "../live/Live";
