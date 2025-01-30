@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getNewsInfo } from "@/api";
+// import { getNewsInfo } from "@/api";
 import { newsType } from "@/app/types";
 
 const News = async () => {
-  const getNews = await getNewsInfo();
+  // const getNews = await getNewsInfo();
 
-  const newsData: newsType[] = getNews.articles;
+  // const newsData: newsType[] = getNews.articles;
 
   return (
     <div className="md:w-[350px] bg-gradient-to-b from-zinc-900 to-transparent rounded-md px-2 md:px-6 py-2">
       <h1 className="text-xl text-teal-400 font-bold mb-4">
         SportNEWS - Top Headlines
       </h1>
-      <div>
+      {/* <div>
         {newsData && newsData?.map((news) => (
           <Link key={news.title} href={news.url} legacyBehavior>
             <a target="_blank">
@@ -45,7 +45,7 @@ const News = async () => {
             </a>
           </Link>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
