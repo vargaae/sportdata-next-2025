@@ -28,7 +28,7 @@ export default function RootLayout({
           <section className="md:flex space-x-4">
             {/* <News /> */}
             {children}
-            <Sidebar />
+            {/* <Sidebar /> */}
           </section>
         </main>
       </body>
