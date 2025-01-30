@@ -1,5 +1,5 @@
-import { getMatchesFootball, getMatchesFootballFinished } from "@/api/route";
-import Status from "@/components/status/Status";
+// import { getMatchesFootball, getMatchesFootballFinished } from "@/api/route";
+// import Status from "@/components/status/Status";
 
 import { generateClient } from "aws-amplify/data";
 // import type { Schema } from "@/amplify/data/resource";
@@ -13,11 +13,11 @@ Amplify.configure(outputs);
 // const client = generateClient<Schema>();
 
 export default async function Home() {
-  const getDatas = await getMatchesFootball();
-  const getDatasFinished = await getMatchesFootballFinished();
+  // const getDatas = await getMatchesFootball();
+  // const getDatasFinished = await getMatchesFootballFinished();
 
-  const matchesDatas = getDatas?.matches;
-  const matchesDatasFinished = getDatasFinished?.matches;
+  // const matchesDatas = getDatas?.matches;
+  // const matchesDatasFinished = getDatasFinished?.matches;
 
   const nd = new Date();
   const dateConvert = nd.toDateString();
@@ -30,10 +30,10 @@ export default async function Home() {
           <p>{`${dateConvert}`}</p>
         </div>
       </div>
-      <Status
+      {/* <Status
         matchesList={matchesDatas}
         matchesListFinished={matchesDatasFinished}
-      />
+      /> */}
     </section>
   );
 }
