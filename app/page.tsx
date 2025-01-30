@@ -27,7 +27,7 @@ export default function App() {
 
   function createTodo() {
     client.models.Todo.create({
-      content: window.prompt("Todo content"),
+      content: window.prompt("Sport"),
     });
   }
 
@@ -41,11 +41,7 @@ export default function App() {
         ))}
       </ul>
       <div>
-        🥳 App successfully hosted. Try creating a new todo.
-        <br />
-        <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/">
-          Review next steps of this tutorial.
-        </a>
+        🥳 App successfully hosted. 
       </div>
     </main>
   );
