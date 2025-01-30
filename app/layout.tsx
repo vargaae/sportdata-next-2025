@@ -23,14 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="px-2 md:px-16 md:py-2 text-textPrimary">
+        {/* <main className="px-2 md:px-16 md:py-2 text-textPrimary"> */}
           {/* <Navbar /> */}
-          <section className="md:flex space-x-4">
+          {/* <section className="md:flex space-x-4"> */}
             {/* <News /> */}
             {children}
             {/* <Sidebar /> */}
-          </section>
-        </main>
+          {/* </section> */}
+        {/* </main> */}
       </body>
     </html>
   );
