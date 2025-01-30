@@ -1,4 +1,4 @@
-import { apiOptions, matchesType } from "@/app/types";
+import { apiOptions, matchesType } from "@/types";
 
 const options: apiOptions = {
   next: { revalidate: 30 },
